@@ -6,6 +6,7 @@ class TaskStatus(enum.Enum):
     PENDING = "pending"
 
 class TaskRequest(BaseModel):
+    user_id: int
     title: str
     description: str
 
@@ -15,3 +16,7 @@ class TaskResponse(BaseModel):
     title: str
     description: str
     status: str
+
+class TaskUpdateRequest(BaseModel):
+    title: str
+    description: str
